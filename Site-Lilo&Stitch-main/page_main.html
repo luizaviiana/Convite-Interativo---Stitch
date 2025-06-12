@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filminho com o Stitch 💙</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('./images/painelFundo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(65, 105, 225, 0.85); /* azul escuro com transparência */
+      padding: 20px 0;
+    }
+
+    header img {
+      width: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+    }
+
+    .container {
+      background-color: rgba(100, 149, 237, 0.8); /* azul claro com transparência */
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .heart {
+      font-size: 50px;
+      color: #FFDEAD;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .heart:hover {
+      transform: scale(1.2);
+    }
+
+    #nao {
+      font-size: 20px;
+      color: #4169E1;
+      background-color: #FFDEAD;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    #resposta {
+      font-size: 1.5em;
+      margin-top: 20px;
+      color: #FFDEAD;
+    }
+
+    /* Decoração extra opcional */
+    .painelLilo {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 120px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="./images/stitchPerfil.jpg" alt="Stitch fofo">
+  </header>
+
+  <div class="container">
+    <h1>Convite Especial 💙</h1>
+    <p>oiiiiii 🌟</p>
+    <p>Você topa assistir um filminho do Stitch comigo?</p>
+    <p>Não vale dizer não! 😜</p>
+    <p class="heart" onclick="mostrarResposta()">💙</p>
+    <button id="nao" onmouseover="mudarPosicao()">Não</button>
+    <p id="resposta" style="display: none;"></p>
+  </div>
+
+  <!-- painel Lilo decorativo -->
+  <img src="./images/painelLilo.jpg" alt="Lilo" class="painelLilo">
+
+  <script>
+    function mostrarResposta() {
+      document.getElementById('resposta').style.display = 'block';
+      document.getElementById('resposta').innerHTML = 'É claro que eu topo! Vamos assistir juntinhas! 💙🐾';
+    }
+
+    function mudarPosicao() {
+      const buttonNao = document.getElementById('nao');
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
+      buttonNao.style.left = `${randomX}px`;
+      buttonNao.style.top = `${randomY}px`;
+    }
+  </script>
+
+</body>
+</html>
+
